@@ -1,0 +1,28 @@
+[package]
+name = "mr-solana-weapon"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "mr_solana_weapon"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = { version = "0.28.0", features = ["init-if-needed"] }
+anchor-spl = { version = "0.28.0", features = [
+    "spl-associated-token-account",
+    "spl-token",
+    "mpl-token-metadata",
+    "metadata",
+] }
+spl-token = "4.0.0"
+mpl-token-metadata = { version = "1.11" }
+solana-program = "1.16.15"
